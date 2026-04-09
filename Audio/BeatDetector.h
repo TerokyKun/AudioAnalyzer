@@ -1,10 +1,14 @@
 #pragma once
+
 #include <vector>
 
 class BeatDetector
 {
-    public:
+public:
+    void Reset();
+    bool DetectEnergy(float energy);
     bool Detect(const std::vector<float>& spectrum);
-    private:
-    float energyHistory = 0;
+
+private:
+    float history = 0.0f;
 };
